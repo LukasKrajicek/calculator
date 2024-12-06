@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulačka</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+    <!-- Přepínač mezi světlým a tmavým režimem -->
+    <div class="theme-toggle">
+        <label for="themeSwitch">
+            <input type="checkbox" id="themeSwitch">
+            Přepnout téma
+        </label>
+    </div>
+    
+    <!-- Kalkulačka -->
+    <div class="calculator">
+        <!-- Displej kalkulačky -->
+        <input type="text" id="display" readonly>
+
+        <!-- Historie -->
+        <div id="history-container">
+            <div id="history"></div>
+        </div>
+
+        <!-- Tlačítka kalkulačky -->
+        <div class="buttons">
+            <button data-value="7">7</button>
+            <button data-value="8">8</button>
+            <button data-value="9">9</button>
+            <button data-value="/">/</button>
+            <button data-value="4">4</button>
+            <button data-value="5">5</button>
+            <button data-value="6">6</button>
+            <button data-value="*">*</button>
+            <button data-value="1">1</button>
+            <button data-value="2">2</button>
+            <button data-value="3">3</button>
+            <button data-value="-">-</button>
+            <button data-value="0">0</button>
+            <button data-value=".">.</button>
+            <button data-value="=">=</button>
+            <button data-value="+">+</button>
+            <button data-value="C">C</button>
+        </div>
+
+        <!-- Tlačítko pro vymazání historie -->
+        <button id="clear-history">Vymazat historii</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
