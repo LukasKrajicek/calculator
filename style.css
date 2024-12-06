@@ -1,0 +1,223 @@
+/* Základní stylování */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #fafafa;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Světlý režim */
+body.light-mode {
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* Tmavý režim */
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+/* Přepínač tématu */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.2em;
+}
+
+/* Kalkulačka */
+.calculator {
+    background-color: whitesmoke;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Tmavý režim kalkulačky */
+body.dark-mode .calculator {
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+/* Displej kalkulačky */
+#display {
+    width: 95%;
+    height: 60px;
+    font-size: 2.5em;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    color: #333;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Tmavý režim displeje */
+body.dark-mode #display {
+    background-color: #444;
+    color: #fff;
+}
+
+/* Historie kalkulačky */
+#history-container {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode #history-container {
+    background-color: #2a2a2a;
+    border-color: #444;
+}
+
+/* Historie položky */
+#history div {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    font-size: 1em;
+    color: #333;
+}
+
+body.dark-mode #history div {
+    color: #ddd;
+    border-bottom-color: #555;
+}
+
+/* Tlačítka kalkulačky */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* Tlačítka */
+button {
+    font-size: 1.5em;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #009688;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Tlačítko při najetí myší */
+button:hover {
+    background-color: #00796b;
+}
+
+/* Tlačítko při stisku */
+button:active {
+    transform: scale(0.95);
+}
+
+/* Tlačítka pro operace a čísla */
+button[data-value='C'] {
+    background-color: #d9534f;
+}
+
+button[data-value='C']:hover {
+    background-color: #c9302c;
+}
+
+button[data-value='C']:active {
+    background-color: #ac2925;
+}
+
+button[data-value='='] {
+    background-color: #5bc0de;
+}
+
+button[data-value='=']:hover {
+    background-color: #31b0d5;
+}
+
+button[data-value='=']:active {
+    background-color: #269abc;
+}
+
+/* Tlačítka pro operace */
+button[data-value='+'],
+button[data-value='-'],
+button[data-value='*'],
+button[data-value='/'] {
+    background-color: #ff8c00;
+}
+
+button[data-value='+']:hover,
+button[data-value='-']:hover,
+button[data-value='*']:hover,
+button[data-value='/']:hover {
+    background-color: #e67e00;
+}
+
+button[data-value='+']:active,
+button[data-value='-']:active,
+button[data-value='*']:active,
+button[data-value='/']:active {
+    background-color: #c56b00;
+}
+
+/* Tlačítko pro vymazání historie */
+#clear-history {
+    background-color: #d9534f;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    align-self: center;
+    margin-top: 10px;
+}
+
+/* Tlačítko pro vymazání historie - hover a active */
+#clear-history:hover {
+    background-color: #c9302c;
+}
+
+#clear-history:active {
+    background-color: #ac2925;
+}
+
+/* Animace přepínání mezi režimy */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Přizpůsobení pro mobilní zařízení */
+@media (max-width: 600px) {
+    .calculator {
+        width: 100%;
+        padding: 15px;
+    }
+
+    button {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+
+    #display {
+        font-size: 2em;
+    }
+}
